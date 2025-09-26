@@ -5,6 +5,9 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 include = ["htsflow*"]
 
+[tool.setuptools.package-data]
+htsflow = ["py.typed"]
+
 [project]
 name = "hts-flow"
 version = "0.0.0a"
