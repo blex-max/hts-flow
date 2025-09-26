@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from enum import Enum, Flag
+from enum import Flag, StrEnum
 from pysam import AlignedSegment, VariantRecord
 from itertools import chain
 from collections.abc import Iterator, Sequence, Mapping
@@ -313,10 +313,10 @@ class ReadView(Mapping[Any, tuple[Read_T, ...]]):
         return retd
 
 
-class TestOutcomes(Enum):
-    VARIANT_PASS = 0
-    VARIANT_FAIL = 1
-    NA = 2
+class TestOutcomes(StrEnum):
+    VARIANT_PASS = 'PASS'
+    VARIANT_FAIL = 'FAIL'
+    NA = 'NA'
 
 
 # NOTE/TODO: FlagResult is the part of the abstractflaggers model about which I am most skeptical
