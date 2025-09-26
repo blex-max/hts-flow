@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["htsflow*"]
+
+[project]
+name = "hts-flow"
+version = "0.0.0a"
+description = "effective and ergonomic abstractions to enable exploration and execution of scientific logic over high throughput sequencing data"
+authors = [
+  {name = "Alex Byrne"}
+]
+license = "MIT"
+readme = "README.md"
+dependencies = [
+  "pysam>=0.22, ==0.*",
+  "pydantic>=2.11.7, ==2.*",
+]
+requires-python = ">= 3.12"
+
+[project.optional-dependencies]
+docs = [
+  "sphinx",
+  "sphinx_rtd_theme"
+]
+
+[tool.pyright]  # basedpyright recommended
+failOnWarnings = false
+ignore = ["scratch-api.py", 'examples/*']
+reportAny = false
+reportExplicitAny = false
+reportUnnecessaryIsInstance = false
+reportUnnecessaryComparison = false
+
